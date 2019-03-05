@@ -9,7 +9,7 @@ public class Durak {
 
 	public static Card[] createSixCard() {
 		
-		return new Card[6];
+		return new Card[] {createRandomCard(), createRandomCard(), createRandomCard(), createRandomCard(), createRandomCard(), createRandomCard()};
 	}
 
 }
