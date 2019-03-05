@@ -56,7 +56,7 @@ public class DurakTest {
 		if (number == "jack" || number == "queen" || number == "king" || number == "ace") {
 			wrongNumber = false;
 		} else {
-			for (int i = 6; i < 10; i++) {
+			for (int i = 6; i < 11; i++) {
 				if (Integer.toString(i) == number) {
 					wrongNumber = false;
 					break;
@@ -78,4 +78,17 @@ public class DurakTest {
 		Card[] array = Durak.createSixCard();
 		assertEquals(array.length, 6);
 	}
+	
+	// тест что карты инициализированы
+		@Test
+		public void testOfCardsInitialisation() {
+			Card[] array = Durak.createSixCard();
+			boolean isNull = false;
+			for (int i = 0; i < 6; i++) {
+				if(array[i] == null) {
+					isNull = true;
+				}
+			}
+			assertFalse(isNull);
+		}
 }
