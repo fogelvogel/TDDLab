@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class DurakTest {
 
 	@Test
-	void testOfCreation() {
+	public void testOfCreation() {
 		Durak instance = new Durak();
 		assertNotNull(instance);
 	}
