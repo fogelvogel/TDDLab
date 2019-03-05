@@ -78,11 +78,4 @@ public class DurakTest {
 		Card[] array = Durak.createSixCard();
 		assertEquals(array.length, 6);
 	}
-	
-	// тест что карты инициализированы
-		@Test
-		public void testOfCardsInitialisation() {
-			Card[] array = Durak.createSixCard();
-			assertEquals(array.length, 6);
-		}
 }
