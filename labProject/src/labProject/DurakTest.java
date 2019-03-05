@@ -71,4 +71,11 @@ public class DurakTest {
 		Card[] array = Durak.createSixCard();
 		assertNotNull(array);
 	}
+	
+	// тест что карт шесть штук
+	@Test
+	public void testOfCardsQuantity() {
+		Card[] array = Durak.createSixCard();
+		assertEquals(array.length, 6);
+	}
 }
