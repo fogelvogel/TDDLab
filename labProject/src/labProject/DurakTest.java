@@ -6,8 +6,14 @@ import static org.junit.Assert.*;
 public class DurakTest {
 
 	@Test
-	public void testOfCreation() {
+	public void testOfCreationDurak() {
 		Durak instance = new Durak();
+		assertNotNull(instance);
+	}
+	
+	@Test
+	public void testOfCreationCard() {
+		Card instance = new Card();
 		assertNotNull(instance);
 	}
 }
