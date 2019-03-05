@@ -46,4 +46,23 @@ public class DurakTest {
 		String number = instance.getNumber();
 		assertNotNull(number);
 	}
+	
+//  номер должен быть от 6 до 10, валет, дама, король или туз
+	@Test
+	public void testOfCorrectNumberOfCard() {
+		Card instance = Durak.createRandomCard();
+		String number = instance.getSuit();
+		boolean wrongNumber = true;
+		if (number == "jack" || number == "queen" || number == "king" || number == "ace") {
+			wrongNumber = false;
+		} else {
+			for (int i = 6; i < 10; i++) {
+				if (Integer.toString(i) == number) {
+					wrongNumber = false;
+					break;
+				}
+			}
+		}
+		assertFalse(wrongNumber);
+	}
 }
