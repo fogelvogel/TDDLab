@@ -7,4 +7,9 @@ public class Card {
 		return "hearts";
 	}
 
+	public String getNumber() {
+		
+		return "";
+	}
+
 }
