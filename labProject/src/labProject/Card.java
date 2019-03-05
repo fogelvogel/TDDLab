@@ -4,7 +4,7 @@ public class Card {
 
 	public String getSuit() {
 
-		return "";
+		return "hearts";
 	}
 
 }
