@@ -22,4 +22,10 @@ public class DurakTest {
 		Card instance = Durak.createRandomCard();
 		assertNotNull(instance);
 	}
+	@Test
+	public void testOfSuitOfCard() {
+		Card instance = Durak.createRandomCard();
+		String suit = instance.getSuit();
+		assertNotNull(suit);
+	}
 }
