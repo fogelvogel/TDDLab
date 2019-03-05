@@ -51,7 +51,7 @@ public class DurakTest {
 	@Test
 	public void testOfCorrectNumberOfCard() {
 		Card instance = Durak.createRandomCard();
-		String number = instance.getSuit();
+		String number = instance.getNumber();
 		boolean wrongNumber = true;
 		if (number == "jack" || number == "queen" || number == "king" || number == "ace") {
 			wrongNumber = false;

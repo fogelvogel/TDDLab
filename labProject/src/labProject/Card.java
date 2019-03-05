@@ -9,7 +9,7 @@ public class Card {
 
 	public String getNumber() {
 		
-		return "";
+		return "ace";
 	}
 
 }
