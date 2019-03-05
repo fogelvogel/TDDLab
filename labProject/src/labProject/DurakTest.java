@@ -40,4 +40,10 @@ public class DurakTest {
 		}
 		assertFalse(wrongSuit);
 	}
+	@Test
+	public void testOfNumberOfCard() {
+		Card instance = Durak.createRandomCard();
+		String number = instance.getNumber();
+		assertNotNull(number);
+	}
 }
