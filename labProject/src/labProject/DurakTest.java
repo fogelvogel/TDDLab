@@ -16,4 +16,10 @@ public class DurakTest {
 		Card instance = new Card();
 		assertNotNull(instance);
 	}
+	
+	@Test
+	public void testOfCreationCardByDurak() {
+		Card instance = Durak.createRandomCard();
+		assertNotNull(instance);
+	}
 }
