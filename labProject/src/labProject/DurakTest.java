@@ -65,4 +65,10 @@ public class DurakTest {
 		}
 		assertFalse(wrongNumber);
 	}
+	
+	@Test
+	public void testOfCreationSixCardsByDurak() {
+		Card[] array = Durak.createSixCard();
+		assertNotNull(array);
+	}
 }
