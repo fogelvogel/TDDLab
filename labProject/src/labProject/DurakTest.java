@@ -28,4 +28,16 @@ public class DurakTest {
 		String suit = instance.getSuit();
 		assertNotNull(suit);
 	}
+	
+	//  масть карты должна быть буби, черви, крести или пики
+	@Test
+	public void testOfCorrectSuitOfCard() {
+		Card instance = Durak.createRandomCard();
+		String suit = instance.getSuit();
+		boolean wrongSuit = true;
+		if (suit == "diamonds" || suit == "hearts" || suit == "clubs" || suit == "spades") {
+			wrongSuit = false;
+		}
+		assertFalse(wrongSuit);
+	}
 }
