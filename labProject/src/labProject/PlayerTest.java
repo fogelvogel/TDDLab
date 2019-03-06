@@ -23,10 +23,10 @@ public class PlayerTest {
 	@Test
 	public void testOfGettingCards() {
 		Player instance = new Player();
-		instance.setCards();
+		instance.setCards(Durak.createSixCard());
 		boolean isNull = false;
 		for (int i = 0; i < 6; i++) {
-			if(instance.getCards(i) == null) {
+			if(instance.getCard(i) == null) {
 				isNull = true;
 			}
 		}
