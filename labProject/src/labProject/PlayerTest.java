@@ -18,4 +18,18 @@ public class PlayerTest {
 		int success = instance.play();
 		assertEquals(success, 0);
 	}
+	
+	// игрок должен получить шесть карт на руки
+	@Test
+	public void testOfGettingCards() {
+		Player instance = new Player();
+		instance.setCards();
+		boolean isNull = false;
+		for (int i = 0; i < 6; i++) {
+			if(instance.getCards(i) == null) {
+				isNull = true;
+			}
+		}
+		assertFalse(isNull);
+	}
 }
