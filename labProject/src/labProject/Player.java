@@ -25,5 +25,9 @@ public class Player {
 	
 		return this.cards;
 	}
+	public void aceptCard() {
+		Card[] tmp = new Card[] {this.cards[0], this.cards[1], this.cards[2], this.cards[3], this.cards[4], this.cards[5], Durak.createRandomCard()};
+		cards = tmp;
+	}
 
 }
