@@ -36,6 +36,7 @@ public class PlayerTest {
 		@Test
 		public void testOfGivingCard() {
 			Player instance = new Player();
+			instance.setCards(Durak.createSixCard());
 			instance.giveCard();
 			assertEquals(instance.getCards().length, 5);
 		}
