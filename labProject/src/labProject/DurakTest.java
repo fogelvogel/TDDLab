@@ -91,4 +91,10 @@ public class DurakTest {
 			}
 			assertFalse(isNull);
 		}
+		
+		@Test
+		public void testOfCreationPlayer() {
+			Player instance = new Player();
+			assertNotNull(instance);
+		}
 }
