@@ -32,4 +32,11 @@ public class PlayerTest {
 		}
 		assertFalse(isNull);
 	}
+	// игрок должен выложить одну карту на стол
+		@Test
+		public void testOfGivingCard() {
+			Player instance = new Player();
+			instance.giveCard();
+			assertEquals(instance.getCards().length, 5);
+		}
 }
