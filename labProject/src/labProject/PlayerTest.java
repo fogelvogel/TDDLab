@@ -16,6 +16,6 @@ public class PlayerTest {
 	public void testOfPlaying() {
 		Player instance = new Player();
 		int success = instance.play();
-		assertEquals(success, 1);
+		assertEquals(success, 0);
 	}
 }

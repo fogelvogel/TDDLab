@@ -12,17 +12,6 @@ public class DurakTest {
 	}
 	
 	@Test
-	public void testOfCreationCard() {
-		Card instance = new Card();
-		assertNotNull(instance);
-	}
-	
-	@Test
-	public void testOfCreationCardByDurak() {
-		Card instance = Durak.createRandomCard();
-		assertNotNull(instance);
-	}
-	@Test
 	public void testOfSuitOfCard() {
 		Card instance = Durak.createRandomCard();
 		String suit = instance.getSuit();
@@ -92,9 +81,4 @@ public class DurakTest {
 			assertFalse(isNull);
 		}
 		
-		@Test
-		public void testOfCreationPlayer() {
-			Player instance = new Player();
-			assertNotNull(instance);
-		}
 }
