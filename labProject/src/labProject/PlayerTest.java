@@ -40,4 +40,13 @@ public class PlayerTest {
 			instance.giveCard();
 			assertEquals(instance.getCards().length, 5);
 		}
+		
+		// игрок должен принять карту
+				@Test
+				public void testOfAceptingCard() {
+					Player instance = new Player();
+					instance.setCards(Durak.createSixCard());
+					instance.aceptCard();
+					assertEquals(instance.getCards().length, 7);
+				}
 }
