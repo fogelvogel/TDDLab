@@ -40,6 +40,14 @@ public class PlayerTest {
 			instance.giveCard();
 			assertEquals(instance.getCards().length, 5);
 		}
+		// функция выкладывания карты должна возвращать выложенную карту
+		@Test
+		public void testOfGivingCardReturn() {
+			Player instance = new Player();
+			instance.setCards(Durak.createSixCard());
+			Card ret = instance.giveCard();
+			assertNotNull(ret);
+		}
 		// игрок должен выложить два раза одну карту на стол
 				@Test
 				public void testOfGivingTwoCard() {
