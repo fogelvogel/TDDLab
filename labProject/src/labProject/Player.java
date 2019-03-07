@@ -13,17 +13,20 @@ public class Player {
 	public void setCards(Card[] cards) {
 		this.cards = cards;
 	}
-	public void giveCard() {
+	public Card giveCard() {
+		Card ret;
 		Card[] tmp = new Card[this.cards.length-1];
 		
 		for (int i = 0; i < this.cards.length - 1; i++) {
 			tmp[i] = this.cards[i];
 		}
+		ret = this.cards[this.cards.length - 1];
 		this.cards = new Card[tmp.length];
 		
 		for (int i = 0; i < tmp.length; i++) {
 			this.cards[i] = tmp[i];
 		}
+		return ret;
 	}
 	
 	public Card[] getCards() {
