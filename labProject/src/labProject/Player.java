@@ -31,7 +31,12 @@ public class Player {
 		return this.cards;
 	}
 	public void aceptCard() {
-		Card[] tmp = new Card[] {this.cards[0], this.cards[1], this.cards[2], this.cards[3], this.cards[4], this.cards[5], Durak.createRandomCard()};
+		Card[] tmp = new Card[this.cards.length + 1];
+		
+		for (int i = 0; i < this.cards.length; i++) {
+			 tmp[i] = this.cards[i];
+		}
+		tmp[tmp.length - 1] = Durak.createRandomCard();
 		cards = tmp;
 	}
 
