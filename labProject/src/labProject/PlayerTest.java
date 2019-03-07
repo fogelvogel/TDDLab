@@ -40,6 +40,15 @@ public class PlayerTest {
 			instance.giveCard();
 			assertEquals(instance.getCards().length, 5);
 		}
+		// игрок должен выложить два раза одну карту на стол
+				@Test
+				public void testOfGivingTwoCard() {
+					Player instance = new Player();
+					instance.setCards(Durak.createSixCard());
+					instance.giveCard();
+					instance.giveCard();
+					assertEquals(instance.getCards().length, 4);
+				}
 		
 		// игрок должен принять карту
 				@Test
