@@ -58,4 +58,13 @@ public class PlayerTest {
 					instance.aceptCard();
 					assertEquals(instance.getCards().length, 7);
 				}
+				// игрок должен принять карту два раза
+				@Test
+				public void testOfAceptingTwoCard() {
+					Player instance = new Player();
+					instance.setCards(Durak.createSixCard());
+					instance.aceptCard();
+					instance.aceptCard();
+					assertEquals(instance.getCards().length, 8);
+				}
 }
