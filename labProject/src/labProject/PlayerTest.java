@@ -58,7 +58,16 @@ public class PlayerTest {
 					assertEquals(instance.getCards().length, 4);
 				}
 		
-		// игрок должен принять карту
+				// игрок должен принять карту, переданную в параметрах
+				@Test
+				public void testOfAceptingCardParams() {
+					Player instance = new Player();
+					instance.setCards(Durak.createSixCard());
+					Card card = new Card();
+					instance.aceptCard(card);
+					assertEquals(instance.getCards().length, 7);
+				}
+				// игрок должен принять карту
 				@Test
 				public void testOfAceptingCard() {
 					Player instance = new Player();
