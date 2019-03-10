@@ -63,7 +63,7 @@ public class PlayerTest {
 				public void testOfAceptingCardParams() {
 					Player instance = new Player();
 					instance.setCards(Durak.createSixCard());
-					Card card = new Card();
+					Card card = new Card("spades", "jack");
 					instance.aceptCard(card);
 					assertEquals(instance.getCards().length, 7);
 				}

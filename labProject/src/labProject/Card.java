@@ -1,15 +1,20 @@
 package labProject;
 
 public class Card {
+	public Card (String s, String n) {
+		this.suit = s;
+		this.number = n;
+	}
 
+	String suit, number; 
 	public String getSuit() {
 
-		return "hearts";
+		return suit;
 	}
 
 	public String getNumber() {
 		
-		return "ace";
+		return number;
 	}
 
 }

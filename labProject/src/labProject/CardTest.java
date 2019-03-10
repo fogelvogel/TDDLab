@@ -8,7 +8,7 @@ public class CardTest {
 	
 	@Test
 	public void testOfCreationCard() {
-		Card instance = new Card();
+		Card instance = new Card("spades", "jack");
 		assertNotNull(instance);
 	}
 	
