@@ -97,6 +97,12 @@ public class DurakTest {
 				}
 			}
 			assertFalse(isNull);
+		}	
+		//  возможность сделать ход в игре
+		@Test
+		public void testMakingMove() {
+			int result = Durak.makeMove();
+			assertEquals(1, result);
 		}
-		
 }
+

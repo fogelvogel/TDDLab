@@ -7,8 +7,6 @@ public class Durak {
 	public static Card createRandomCard() {
 		int randSuit= (int)(Math.random() * 3);
 		int randNumber= (int)(Math.random() * 8);
-		System.out.println(randSuit);
-		System.out.println(randNumber);
 		return new Card(suits[randSuit], numbers[randNumber]);
 	}
 
