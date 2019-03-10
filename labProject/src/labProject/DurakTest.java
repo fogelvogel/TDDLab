@@ -29,6 +29,24 @@ public class DurakTest {
 		}
 		assertFalse(wrongSuit);
 	}
+//  масть карты не должна быть всегда одинаковой 
+	@Test
+	public void testOfDifferentSuitOfCard() {
+		boolean isDifferent = false;
+		Card prev, curr = null;
+		
+		for (int i = 0; i < 10; i++) {
+			prev = curr;
+			curr = Durak.createRandomCard();
+			if (prev != null) {
+				if (prev.getSuit() != curr.getSuit()) {
+					isDifferent = true;
+					break;
+				}
+			}
+		}
+		assertTrue(isDifferent);
+	}
 	@Test
 	public void testOfNumberOfCard() {
 		Card instance = Durak.createRandomCard();
