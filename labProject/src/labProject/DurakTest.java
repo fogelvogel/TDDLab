@@ -63,13 +63,10 @@ public class DurakTest {
 		if (number == "jack" || number == "queen" || number == "king" || number == "ace") {
 			wrongNumber = false;
 		} else {
-			for (int i = 6; i < 11; i++) {
-				if (Integer.toString(i) == number) {
-					wrongNumber = false;
-					break;
-				}
-			}
+			int intNum = Integer.parseInt(number);
+			wrongNumber = intNum < 6 || intNum > 10;
 		}
+		System.out.println(number);
 		assertFalse(wrongNumber);
 	}
 	
@@ -101,8 +98,10 @@ public class DurakTest {
 		//  возможность сделать ход в игре
 		@Test
 		public void testMakingMove() {
+			Durak.p1.setCards(Durak.createSixCard());
+			Durak.p2.setCards(Durak.createSixCard());
 			int result = Durak.makeMove();
-			assertEquals(1, result);
+			assertEquals(0, result);
 		}
 }
 
