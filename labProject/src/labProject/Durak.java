@@ -26,22 +26,35 @@ public class Durak {
 		if (firstPlayer) {
 			local1 = p1;
 			local2 = p2;
+			System.out.println("hodit igrok 1");
 		} else {
 			local1 = p2;
 			local2 = p1;
+			System.out.println("hodit igrok 2");
 		}
 		do {
 			
 			if (counter != 0) {
 				onTable[counter] =  local2.giveCard();
+				System.out.println("karta " + onTable[counter].getSuit() + " " + onTable[counter].getNumber() +  " kladetsya na stol (otbivaet)");
 				counter++;
 			}
 			onTable[counter] =  local1.giveCard();
+			System.out.println("karta " + onTable[counter].getSuit() + " " + onTable[counter].getNumber() +  " kladetsya na stol");
 			counter++;
 			
 		}while ((int)(Math.random() * 2) > 0);
-		for (int i = 0; i < onTable.length; i++) {
+		if (firstPlayer) {
+			System.out.println("igrok 2: ");
+		} else {
+			System.out.println("igrok 1: ");
+		}
+		for (int i = 0; i < counter; i++) {
+			System.out.print("zabiraet kartu " + onTable[i].getSuit() + " " +onTable[i].getNumber() + "\n");
 			local2.aceptCard(onTable[i]);
+			if (i % 2 == 0) {
+				local1.aceptCard(Durak.createRandomCard());
+			}
 		}
 		firstPlayer = !firstPlayer;
 		

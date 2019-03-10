@@ -11,39 +11,17 @@ public class Main {
 	 in = new InputStreamReader(System.in);
      System.out.println("Vvedite q dlya vihoda");
      
-     Player p1 = new Player();
-     p1.setCards(Durak.createSixCard());
-     Player p2 = new Player();
-     p2.setCards(Durak.createSixCard());
-     
-     boolean playerOne = true;
-     
+     	Durak.p1.setCards(Durak.createSixCard());
+		Durak.p2.setCards(Durak.createSixCard());
+    
      char inp;
 	do {
 		inp = (char) in.read();
 		inp = (char) in.read();
 		
-		if (playerOne) {
-			System.out.print("Igrok 1 ");
-			p1.giveCard();
-		} else {
-			System.out.print("Igrok 2 ");
-			p2.giveCard();
-		}
-		
-		System.out.println("kladet kartu na stol");
+		Durak.makeMove();
 		
 		
-		if (!playerOne) {
-			System.out.print("Igrok 1 ");
-			p1.aceptCard();
-		} else {
-			p2.aceptCard();
-		}
-		
-		System.out.println("zabiraet kartu");
-		
-		playerOne = !playerOne;
 	} while (inp != 'q');
 	}
 

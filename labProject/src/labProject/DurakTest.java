@@ -66,7 +66,6 @@ public class DurakTest {
 			int intNum = Integer.parseInt(number);
 			wrongNumber = intNum < 6 || intNum > 10;
 		}
-		System.out.println(number);
 		assertFalse(wrongNumber);
 	}
 	
