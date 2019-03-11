@@ -61,4 +61,8 @@ public class Durak {
 		return 0;
 	}
 
+	public static String getTrump() {
+		return "hearts";
+	}
+
 }
