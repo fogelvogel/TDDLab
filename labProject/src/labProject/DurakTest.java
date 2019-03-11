@@ -79,6 +79,12 @@ public class DurakTest {
 		String trump = Durak.getTrump();
 		assertNotNull(trump);
 	}
+	@Test
+	public void testOfComparingCards() {
+		Card c1, c2;
+		int res = Durak.compare(c1 = new Card("spades","6"), c2 = new Card("spades","7"));
+		assertEquals(res, 1);
+	}
 	
 	// тест что карт шесть штук
 	@Test
