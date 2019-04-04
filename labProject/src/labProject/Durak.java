@@ -20,6 +20,7 @@ public class Durak {
 
 	public static int makeMove() {
 		Card[] onTable = new Card[36];
+		
 		int counter = 0;
 		boolean kartaBita = false;
 		Player local1, local2;
@@ -33,38 +34,35 @@ public class Durak {
 			local2 = p1;
 			System.out.println("hodit igrok 2");
 		}
-	do {
-			if (counter > 8) {
-				System.out.println("otbito!");
-				kartaBita = true;
-				for (int i = 0; i < counter; i++) {
-				
-					if (i % 2 == 0) {
-						local1.aceptCard(Durak.createRandomCard());
-					} else {
-						local2.aceptCard(Durak.createRandomCard());
-					}
-				}
-				firstPlayer = !firstPlayer;
-			}
-		onTable[counter] =  local1.giveCard();
-		System.out.println("karta " + onTable[counter].getSuit() + " " + onTable[counter].getNumber() +  " kladetsya na stol");
-		counter++;
-		
-		Card[] local2Cards = local2.getCards();
-		int length = local2Cards.length;
-		for (int i = 0; i < length; i++) {
-			if (Durak.compare(onTable[counter - 1], local2Cards[i]) == 1) {
-				onTable[counter] =  local2.giveCard();
-				System.out.println("karta " + onTable[counter].getSuit() + " " + onTable[counter].getNumber() +  " kladetsya na stol");
-				counter++;
-				break;
-			}
-		}
-		
-	}while (!kartaBita);
 	
-		if (firstPlayer) {
+		do {
+			
+			onTable[counter] = local1.giveCard();
+			System.out.println("karta " + onTable[counter].getSuit() + " " + onTable[counter].getNumber() +  " kladetsya na stol");
+			counter++;
+			onTable[counter] = local2.giveCard();
+			System.out.println("karta " + onTable[counter].getSuit() + " " + onTable[counter].getNumber() +  " kladetsya na stol");
+			counter++;
+			
+			if (Durak.compare(onTable[counter - 2], onTable[counter - 1]) == 0) {
+				kartaBita = true;
+			} ;
+			
+			
+		} while (!kartaBita || counter == 12);
+	
+		if (kartaBita) {
+			System.out.println("otbito!");
+			for (int i = 0; i < counter/2; i++) {
+				System.out.print("igrok 1 beret kartu is kolodi\n");
+				local1.aceptCard(Durak.createRandomCard());
+				System.out.print("igrok 2 beret kartu is kolodi\n");
+				local2.aceptCard(Durak.createRandomCard());
+			}
+			firstPlayer = !firstPlayer;
+			System.out.print("\n");
+		} else {
+			if (firstPlayer) {
 			System.out.println("igrok 2: ");
 		} else {
 			System.out.println("igrok 1: ");
@@ -76,7 +74,8 @@ public class Durak {
 				local1.aceptCard(Durak.createRandomCard());
 			}
 		}
-		firstPlayer = !firstPlayer;
+		}
+	
 		
 		return 0;
 	}
@@ -116,3 +115,36 @@ public class Durak {
 	}
 
 }
+
+
+
+//do {
+//	if (counter > 8) {
+//		System.out.println("otbito!");
+//		kartaBita = true;
+//		for (int i = 0; i < counter; i++) {
+//		
+//			if (i % 2 == 0) {
+//				local1.aceptCard(Durak.createRandomCard());
+//			} else {
+//				local2.aceptCard(Durak.createRandomCard());
+//			}
+//		}
+//		firstPlayer = !firstPlayer;
+//	}
+//onTable[counter] =  local1.giveCard();
+//System.out.println("karta " + onTable[counter].getSuit() + " " + onTable[counter].getNumber() +  " kladetsya na stol");
+//counter++;
+//
+//Card[] local2Cards = local2.getCards();
+//int length = local2Cards.length;
+//for (int i = 0; i < length; i++) {
+//	if (Durak.compare(onTable[counter - 1], local2Cards[i]) == 1) {
+//		onTable[counter] =  local2.giveCard();
+//		System.out.println("karta " + onTable[counter].getSuit() + " " + onTable[counter].getNumber() +  " kladetsya na stol");
+//		counter++;
+//		break;
+//	}
+//}
+//
+//}while (!kartaBita);
